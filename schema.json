@@ -1,0 +1,34 @@
+{
+    "metrics": {
+        "gpu_utilization": {
+            "description": "Percentage of GPU utilization (if GPU collector enabled)",
+            "unit": "%",
+            "example_query": "avg(windows_gpu_utilization)"
+        },
+        "cpu_usage": {
+            "description": "Percentage of CPU usage",
+            "unit": "%",
+            "example_query": "100 - (avg by (instance) (irate(windows_cpu_time_total{mode=\"idle\"}[5m])) * 100)"
+        },
+        "memory_usage": {
+            "description": "Percentage of memory used",
+            "unit": "%",
+            "example_query": "100 - (windows_memory_available_bytes / windows_memory_total_bytes * 100)"
+        },
+        "uptime": {
+            "description": "System uptime in seconds",
+            "unit": "seconds",
+            "example_query": "windows_system_up_time"
+        },
+        "disk_usage": {
+            "description": "Percentage of disk space used per volume",
+            "unit": "%",
+            "example_query": "100 - (windows_logical_disk_free_bytes / windows_logical_disk_size_bytes * 100)"
+        },
+        "network_throughput": {
+            "description": "Network throughput in bytes per second",
+            "unit": "bytes/sec",
+            "example_query": "rate(windows_net_bytes_received_total[5m]) + rate(windows_net_bytes_sent_total[5m])"
+        }
+    }
+}
