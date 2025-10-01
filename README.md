@@ -1,3 +1,14 @@
+Prerequisites
+- Python 3.8+
+- Grafana instance with Prometheus datasource
+- Google AI API key
+- Windows/Node Exporter configured
+
+1. Clone the repo
+2. Install dependencies: `pip install -r requirements.txt`
+3. Configure `.env` with your API keys
+4. Run: `python agent.py`
+
 This project uses Google's Gemma AI as an intelligent agent to query Grafana datasources and present monitoring results in natural language. The system bridges the gap between complex monitoring queries and user-friendly conversations.
 
  System Flow
